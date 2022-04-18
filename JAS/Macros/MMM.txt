@@ -1,0 +1,6 @@
+
+Sub Macro3(AAA as string)
+Dim ws As Worksheet
+Range("A4").Value = AAA
+
+End Sub

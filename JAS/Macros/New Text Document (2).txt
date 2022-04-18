@@ -1,0 +1,180 @@
+Sub Macro5()
+'
+' Macro5 Macro
+'
+
+'
+Dim ws As Worksheet
+Dim Report As String
+Dim lastRow, lastCol, row, col, lenString As Long
+Report = ActiveSheet.Name
+Set dataSht = Worksheets(Report)
+
+
+For Each ws In ActiveWorkbook.Worksheets
+
+
+lastRow = ws.Cells(Rows.Count, 1).End(xlUp).row
+
+MsgBox lastRow
+
+Next ws
+    
+
+
+End Sub
+
+
+Sub Macro6()
+
+Dim ws As Worksheet
+Dim Report As String
+Dim lastRow, lastCol, row, col, lenString As Long
+Report = ActiveSheet.Name
+Set dataSht = Worksheets(Report)
+Dim i As Integer
+Dim MMM As String
+Dim YYY As String
+
+
+For Each ws In ActiveWorkbook.Worksheets
+' Get Month & Year on Invoice
+MMM = Format(ws.Range("AM11").Value, "mmm")
+YYY = Format(ws.Range("AM11").Value, "yyyy")
+
+lastRow = ws.Cells(Rows.Count, 1).End(xlUp).row
+'lastRow = Cells(Rows.Count, 1).End(xlUp).row
+
+i = 24
+
+' ---- Upper Area Start ----
+
+If Len(ws.Range("T7").Value) = 0 Then
+    With ws.Range("T7:AB7")
+        .HorizontalAlignment = xlLeft
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = True
+    End With
+    ws.Range("T7").Value = "這裡要用FMS查，暫定207061"
+End If
+   
+If Len(ws.Range("T9").Value) = 0 Then
+    With ws.Range("T9:AB10")
+        .HorizontalAlignment = xlLeft
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = True
+    End With
+    ws.Range("T9").Formula = "=INDEX('[LG Vendor Info.xlsx]JAS'!$A:$A,MATCH(207061,'[LG Vendor Info.xlsx]JAS'!$C:$C,))"
+End If
+      
+If Len(ws.Range("T12").Value) = 0 Then
+    With ws.Range("T12:AB13")
+        .HorizontalAlignment = xlLeft
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = True
+    End With
+    ws.Range("T12").Formula = "=INDEX('[LG Vendor Info.xlsx]JAS'!$E:$E,MATCH(207061,'[LG Vendor Info.xlsx]JAS'!$C:$C,))"
+End If
+
+If Len(ws.Range("T15").Value) = 0 Then
+    With ws.Range("T15:AB16")
+        .HorizontalAlignment = xlLeft
+        .VerticalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = True
+    End With
+    ws.Range("T15").Formula = "=INDEX('[LG Vendor Info.xlsx]JAS'!$F:$F,MATCH(207061,'[LG Vendor Info.xlsx]JAS'!$C:$C,))"
+End If
+
+' ---- Upper Area End ----
+
+
+' ---- Below Area Start ----
+
+    Do While i <= lastRow
+    
+        If Len(ws.Range("O" & i).Value) = 0 Then
+            Debug.Print ws.Range("O" & i).Address
+            ws.Range("O" & i).Formula = "=INDEX(Mapping.xlsx!$D:$D,MATCH(A" & i & ",Mapping.xlsx!$A:$A,0))"
+        End If
+
+        If Len(ws.Range("X" & i).Value) = 0 Then
+            Debug.Print ws.Range("X" & i).Address
+            ws.Range("X" & i).Formula = "=INDEX(Mapping.xlsx!$C:$C,MATCH(A" & i & ",Mapping.xlsx!$A:$A,0))"
+        End If
+
+
+        If Len(ws.Range("AE" & i).Value) = 0 Then
+            Debug.Print ws.Range("AE" & i).Address
+            ws.Range("AE" & i).Formula = "=INDEX('[Shipment Register.xlsx]" & MMM & YYY & "'!$V:$V,MATCH(A" & i & ",'[Shipment Register.xlsx]" & MMM & YYY & "'!$U:$U,0))"
+        End If
+
+
+
+        If ws.Range("R" & i).Value = "474011" Then
+            ws.Range("R" & i).Replace What:="474011", Replacement:="758199"
+        ElseIf ws.Range("S" & i).Value = "474011" Then
+            ws.Range("S" & i).Replace What:="474011", Replacement:="758199"
+        
+        ElseIf ws.Range("R" & i).Value = "476020" Then
+            ws.Range("R" & i).Replace What:="476020", Replacement:="746101"
+        ElseIf ws.Range("S" & i).Value = "476020" Then
+            ws.Range("S" & i).Replace What:="476020", Replacement:="746101"
+        
+        ElseIf ws.Range("R" & i).Value = "476021" Then
+            ws.Range("R" & i).Replace What:="476021", Replacement:="746101"
+        ElseIf ws.Range("S" & i).Value = "476021" Then
+            ws.Range("S" & i).Replace What:="476021", Replacement:="746101"
+        
+        End If
+        
+            
+
+
+
+        i = i + 2
+        'Debug.Print i - 2
+        Debug.Print "---"
+    Loop
+Next ws
+
+
+
+End Sub
+
+Sub Test1()
+Dim MMM As String
+Dim YYY As String
+
+'ws.Range("AM11").Value
+Debug.Print Format(Range("AM11").Value, "mmm")
+MMM = Format(Range("AM11").Value, "mmm")
+YYY = Format(Range("AM11").Value, "yyyy")
+Debug.Print MMM
+Debug.Print YYY
+
+
+End Sub
