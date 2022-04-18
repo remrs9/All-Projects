@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1191,5476</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>987,5136</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test5_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -75,10 +75,9 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="完成迴圈&#xA;完成WTPE3判斷&#xA;if CountryCode&lt;&gt;TW, Start with row of WTPE3.&#xA;" DisplayName="Test5" sap:VirtualizedContainerService.HintSize="1201,5411" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="完成迴圈&#xA;完成WTPE3判斷&#xA;if CountryCode&lt;&gt;TW, Start with row of WTPE3.&#xA;" DisplayName="Test5" sap:VirtualizedContainerService.HintSize="997,5071" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT1" />
       <Variable x:TypeArguments="x:String" Name="DText" />
@@ -98,7 +97,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="1159,60" sap2010:WorkflowViewState.IdRef="Assign_47">
+    <Assign sap:VirtualizedContainerService.HintSize="955,60" sap2010:WorkflowViewState.IdRef="Assign_47">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[Demand]</OutArgument>
       </Assign.To>
@@ -106,14 +105,14 @@
         <InArgument x:TypeArguments="x:Int32">[Integer.Parse(io_DTAAA.Rows(BBB)("Delivery quantity").ToString)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence sap:VirtualizedContainerService.HintSize="1159,337" sap2010:WorkflowViewState.IdRef="Sequence_51">
+    <Sequence sap:VirtualizedContainerService.HintSize="955,337" sap2010:WorkflowViewState.IdRef="Sequence_51">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:OutputDataTable DataTable="[io_EXDT1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[DText]" />
-      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="測試帶山&#xD;&#xA;" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,126" sap2010:WorkflowViewState.IdRef="MessageBox_48" Text="[&quot;This is Test5 method check io_EXDT1 &quot;+DText]">
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="測試帶山&#xA;" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,126" sap2010:WorkflowViewState.IdRef="MessageBox_48" Text="[&quot;This is Test5 method check io_EXDT1 &quot;+DText]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -121,7 +120,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:MessageBox>
     </Sequence>
-    <Assign sap2010:Annotation.AnnotationText="BBB = start row&#xA;default = 0&#xA;&#xA;SSS = 每一行的可用數量" sap:VirtualizedContainerService.HintSize="1159,132" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap2010:Annotation.AnnotationText="BBB = start row&#xA;default = 0&#xA;&#xA;SSS = 每一行的可用數量" sap:VirtualizedContainerService.HintSize="955,132" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[SSS]</OutArgument>
       </Assign.To>
@@ -134,7 +133,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="1159,91" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="955,91" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[AAA]</OutArgument>
       </Assign.To>
@@ -147,16 +146,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:InterruptibleWhile Condition="[AAA &gt;= SSS]" DisplayName="While" sap:VirtualizedContainerService.HintSize="1159,2697" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:InterruptibleWhile Condition="[AAA &gt;= SSS]" DisplayName="While" sap:VirtualizedContainerService.HintSize="955,2527" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1123,2532" sap2010:WorkflowViewState.IdRef="Sequence_47">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="919,2362" sap2010:WorkflowViewState.IdRef="Sequence_47">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch sap2010:Annotation.AnnotationText="Try:&#xA;第BBB行的供給&#xA;&#xA;&#xA;Catch:&#xA;如果BBB超出範圍就找WTPE3&#xA;把DT1 assign為 WTPE3的DataTable&#xA;BBB從0開始&#xA;&#xA;Finally:&#xA;" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1081,2440" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+          <TryCatch sap2010:Annotation.AnnotationText="Try:&#xA;第BBB行的供給&#xA;&#xA;&#xA;Catch:&#xA;如果BBB超出範圍就找WTPE3&#xA;把DT1 assign為 WTPE3的DataTable&#xA;BBB從0開始&#xA;&#xA;Finally:&#xA;" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="877,2270" sap2010:WorkflowViewState.IdRef="TryCatch_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -178,7 +177,7 @@
               </Assign>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:IndexOutOfRangeException" sap:VirtualizedContainerService.HintSize="1047,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+              <Catch x:TypeArguments="s:IndexOutOfRangeException" sap:VirtualizedContainerService.HintSize="843,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -287,31 +286,29 @@
                         </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,282" sap2010:WorkflowViewState.IdRef="CommentOut_19">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DataScraping2.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_EXDT2">[io_EXDT1]</OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,329" sap2010:WorkflowViewState.IdRef="CommentOut_20">
                       <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,251" sap2010:WorkflowViewState.IdRef="Sequence_54">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DataScraping2.xaml">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_EXDT2">
-                                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_EXDT1" />
-                              </OutArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                          </ui:InvokeWorkflowFile>
+                          <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="測試帶山 &#xA;存DTScrape 到sheet4&#xA;&#xA;" DataTable="[io_EXDT1]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Sheet4" WorkbookPath="C:\Users\XTB3NYJ\Desktop\WTPE777.xlsx">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:ReadRange>
                         </Sequence>
                       </ui:CommentOut.Body>
                     </ui:CommentOut>
-                    <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="測試帶山 &#xD;&#xA;存DTScrape 到sheet4&#xD;&#xA;&#xD;&#xA;" DataTable="[io_EXDT1]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="797,159" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Sheet4" WorkbookPath="C:\Users\XTB3NYJ\Desktop\WTPE777.xlsx">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:ReadRange>
                     <Sequence DisplayName="TEST 帶山Sequence" sap:VirtualizedContainerService.HintSize="797,295" sap2010:WorkflowViewState.IdRef="Sequence_53">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="io_DTtext" />
@@ -337,48 +334,48 @@
               </Catch>
             </TryCatch.Catches>
             <TryCatch.Finally>
-              <Sequence sap:VirtualizedContainerService.HintSize="1043,2036" sap2010:WorkflowViewState.IdRef="Sequence_46">
+              <Sequence sap:VirtualizedContainerService.HintSize="839,1866" sap2010:WorkflowViewState.IdRef="Sequence_46">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="要處理的row的可用數量" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1001,115" sap2010:WorkflowViewState.IdRef="MessageBox_54" Text="[&quot;AAA:&quot; + AAA.ToString]">
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="要處理的row的可用數量" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="797,115" sap2010:WorkflowViewState.IdRef="MessageBox_54" Text="[&quot;AAA:&quot; + AAA.ToString]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:MessageBox>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="要處理的row的可用數量" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1001,115" sap2010:WorkflowViewState.IdRef="MessageBox_55" Text="[&quot;SSS:&quot; + SSS.ToString]">
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="要處理的row的可用數量" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="797,115" sap2010:WorkflowViewState.IdRef="MessageBox_55" Text="[&quot;SSS:&quot; + SSS.ToString]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:MessageBox>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="現在要處理的行" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1001,115" sap2010:WorkflowViewState.IdRef="MessageBox_56" Text="[&quot;DATAROW:&quot; +BBB.ToString]">
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="現在要處理的行" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="797,115" sap2010:WorkflowViewState.IdRef="MessageBox_56" Text="[&quot;DATAROW:&quot; +BBB.ToString]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:MessageBox>
-                <If sap2010:Annotation.AnnotationText="當需求比可用還要少，就輸入需求&#xA;&#xA;當需求比可用還多，就輸入可用&#xA;&#xA;新的需求是原來需求減原來可用(AAA-SSS)" Condition="[AAA &lt;= SSS]" sap:VirtualizedContainerService.HintSize="1001,1193" sap2010:WorkflowViewState.IdRef="If_10">
+                <If sap2010:Annotation.AnnotationText="當需求比可用還要少，就輸入需求&#xA;&#xA;當需求比可用還多，就輸入可用&#xA;&#xA;新的需求是原來需求減原來可用(AAA-SSS)" Condition="[AAA &lt;= SSS]" sap:VirtualizedContainerService.HintSize="797,1023" sap2010:WorkflowViewState.IdRef="If_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap2010:Annotation.AnnotationText="貨量充足&#xA;當需求&lt;= 可用的" sap:VirtualizedContainerService.HintSize="478,907" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                    <Sequence sap2010:Annotation.AnnotationText="貨量充足&#xA;當需求&lt;= 可用的" sap:VirtualizedContainerService.HintSize="376,737" sap2010:WorkflowViewState.IdRef="Sequence_43">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_51">
+                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_51">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[CCC]</OutArgument>
                         </Assign.To>
@@ -386,37 +383,26 @@
                           <InArgument x:TypeArguments="x:Int32">[BBB+1]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="輸入的位置與數值&#xA;數值就是&quot;需求&quot;" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="436,126" sap2010:WorkflowViewState.IdRef="MessageBox_57" Text="[&quot;Checkcheck Demand: io_EXDT1.Rows(&quot;+BBB.ToString+&quot;)('Request')&quot;   + AAA.ToString]">
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="輸入的位置與數值&#xA;數值就是&quot;需求&quot;" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,126" sap2010:WorkflowViewState.IdRef="MessageBox_57" Text="[&quot;Checkcheck Demand: io_EXDT1.Rows(&quot;+BBB.ToString+&quot;)('Request')&quot;   + AAA.ToString]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:MessageBox>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,276" sap2010:WorkflowViewState.IdRef="CommentOut_14">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_42">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  selectedItems1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_4">
-                              <ui:Check.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="746afacb-93f3-4a62-a621-2fcc8d59afdc" InformativeScreenshot="db556acafbabc46afc4777b262f87f2b" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='https://www.upspostsaleslogistics.com/oms/checkInventoryItemAvailability.do' /&gt;&lt;webctrl id='selectedItems{0}' tag='INPUT' type='checkbox' /&gt;&quot;, CCC)]">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:Check.Target>
-                            </ui:Check>
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                      </ui:CommentOut>
-                      <Assign sap2010:Annotation.AnnotationText="把要輸入的值抓到新的array中之後好處理" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="Assign_52">
+                      <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  selectedItems1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_4">
+                        <ui:Check.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="746afacb-93f3-4a62-a621-2fcc8d59afdc" InformativeScreenshot="db556acafbabc46afc4777b262f87f2b" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='https://www.upspostsaleslogistics.com/oms/checkInventoryItemAvailability.do' /&gt;&lt;webctrl id='selectedItems{0}' tag='INPUT' type='checkbox' /&gt;&quot;, CCC)]">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Check.Target>
+                      </ui:Check>
+                      <Assign sap2010:Annotation.AnnotationText="把要輸入的值抓到新的array中之後好處理" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Assign_52">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:Int32[]">[Fillarr]</OutArgument>
                         </Assign.To>
@@ -429,7 +415,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_53">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[AAA]</OutArgument>
                         </Assign.To>
@@ -440,14 +426,14 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence sap2010:Annotation.AnnotationText="貨量不足&#xA;當需求 &gt; 可用的" sap:VirtualizedContainerService.HintSize="478,949" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                    <Sequence sap2010:Annotation.AnnotationText="貨量不足&#xA;當需求 &gt; 可用的" sap:VirtualizedContainerService.HintSize="376,779" sap2010:WorkflowViewState.IdRef="Sequence_45">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_54">
+                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_54">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[CCC]</OutArgument>
                         </Assign.To>
@@ -455,37 +441,26 @@
                           <InArgument x:TypeArguments="x:Int32">[BBB+1]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="輸入的位置與數值&#xA;數值就是&quot;可用的&quot;" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="436,126" sap2010:WorkflowViewState.IdRef="MessageBox_58" Text="[&quot;CheckCheck Supply: io_EXDT1.Rows(&quot;+BBB.ToString+&quot;)('Request)&quot; + SSS.ToString]">
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="輸入的位置與數值&#xA;數值就是&quot;可用的&quot;" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,126" sap2010:WorkflowViewState.IdRef="MessageBox_58" Text="[&quot;CheckCheck Supply: io_EXDT1.Rows(&quot;+BBB.ToString+&quot;)('Request)&quot; + SSS.ToString]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:MessageBox>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,276" sap2010:WorkflowViewState.IdRef="CommentOut_15">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_44">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  selectedItems1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_5">
-                              <ui:Check.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="746afacb-93f3-4a62-a621-2fcc8d59afdc" InformativeScreenshot="db556acafbabc46afc4777b262f87f2b" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='https://www.upspostsaleslogistics.com/oms/checkInventoryItemAvailability.do' /&gt;&lt;webctrl id='selectedItems{0}' tag='INPUT' type='checkbox' /&gt;&quot;, CCC)]">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:Check.Target>
-                            </ui:Check>
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                      </ui:CommentOut>
-                      <Assign sap2010:Annotation.AnnotationText="把要輸入的值抓到新的array中之後好處理" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="Assign_55">
+                      <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  selectedItems1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_5">
+                        <ui:Check.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="746afacb-93f3-4a62-a621-2fcc8d59afdc" InformativeScreenshot="db556acafbabc46afc4777b262f87f2b" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='https://www.upspostsaleslogistics.com/oms/checkInventoryItemAvailability.do' /&gt;&lt;webctrl id='selectedItems{0}' tag='INPUT' type='checkbox' /&gt;&quot;, CCC)]">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Check.Target>
+                      </ui:Check>
+                      <Assign sap2010:Annotation.AnnotationText="把要輸入的值抓到新的array中之後好處理" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Assign_55">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:Int32[]">[Fillarr]</OutArgument>
                         </Assign.To>
@@ -498,7 +473,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <Assign sap2010:Annotation.AnnotationText="新的需求是原來需求減原來可用(AAA-SSS)" sap:VirtualizedContainerService.HintSize="436,102" sap2010:WorkflowViewState.IdRef="Assign_56">
+                      <Assign sap2010:Annotation.AnnotationText="新的需求是原來需求減原來可用(AAA-SSS)" sap:VirtualizedContainerService.HintSize="334,102" sap2010:WorkflowViewState.IdRef="Assign_56">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[AAA]</OutArgument>
                         </Assign.To>
@@ -514,7 +489,7 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <Assign sap2010:Annotation.AnnotationText="進入下一行" sap:VirtualizedContainerService.HintSize="1001,91" sap2010:WorkflowViewState.IdRef="Assign_57">
+                <Assign sap2010:Annotation.AnnotationText="進入下一行" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="Assign_57">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[BBB]</OutArgument>
                   </Assign.To>
@@ -527,7 +502,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="現在的需求" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1001,115" sap2010:WorkflowViewState.IdRef="MessageBox_59" Text="[&quot;AAA: &quot;+ AAA.ToString]">
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="現在的需求" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="797,115" sap2010:WorkflowViewState.IdRef="MessageBox_59" Text="[&quot;AAA: &quot;+ AAA.ToString]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -540,7 +515,7 @@
         </Sequence>
       </ui:InterruptibleWhile.Body>
     </ui:InterruptibleWhile>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1159,401" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="955,401" sap2010:WorkflowViewState.IdRef="CommentOut_16">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,323" sap2010:WorkflowViewState.IdRef="Sequence_48">
           <sap:WorkflowViewStateService.ViewState>
@@ -932,21 +907,21 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1159,84" sap2010:WorkflowViewState.IdRef="MessageBox_60" Text="[&quot;This is jump out of loop SSS: &quot; + SSS.ToString]" />
-    <If sap2010:Annotation.AnnotationText="原來的dowhile條件會還有一次沒處理，在這邊處理" Condition="[AAA &lt;&gt;0]" sap:VirtualizedContainerService.HintSize="1159,1010" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="955,84" sap2010:WorkflowViewState.IdRef="MessageBox_60" Text="[&quot;This is jump out of loop SSS: &quot; + SSS.ToString]" />
+    <If sap2010:Annotation.AnnotationText="原來的dowhile條件會還有一次沒處理，在這邊處理" Condition="[AAA &lt;&gt;0]" sap:VirtualizedContainerService.HintSize="955,840" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="478,792" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,622" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_46">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[CCC]</OutArgument>
             </Assign.To>
@@ -954,31 +929,20 @@
               <InArgument x:TypeArguments="x:Int32">[BBB+1]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="436,84" sap2010:WorkflowViewState.IdRef="MessageBox_14" Text="[&quot;Type into Demand: DT1.Rows(&quot;+BBB.ToString+&quot;)('Request')&quot;   + AAA.ToString]" />
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,276" sap2010:WorkflowViewState.IdRef="CommentOut_13">
-            <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_38">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  selectedItems1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_3">
-                  <ui:Check.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="746afacb-93f3-4a62-a621-2fcc8d59afdc" InformativeScreenshot="db556acafbabc46afc4777b262f87f2b" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='https://www.upspostsaleslogistics.com/oms/checkInventoryItemAvailability.do' /&gt;&lt;webctrl id='selectedItems{0}' tag='INPUT' type='checkbox' /&gt;&quot;, CCC)]">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:Check.Target>
-                </ui:Check>
-              </Sequence>
-            </ui:CommentOut.Body>
-          </ui:CommentOut>
-          <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_14" Text="[&quot;Type into Demand: DT1.Rows(&quot;+BBB.ToString+&quot;)('Request')&quot;   + AAA.ToString]" />
+          <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  selectedItems1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_3">
+            <ui:Check.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="746afacb-93f3-4a62-a621-2fcc8d59afdc" InformativeScreenshot="db556acafbabc46afc4777b262f87f2b" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='https://www.upspostsaleslogistics.com/oms/checkInventoryItemAvailability.do' /&gt;&lt;webctrl id='selectedItems{0}' tag='INPUT' type='checkbox' /&gt;&quot;, CCC)]">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:Check.Target>
+          </ui:Check>
+          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_19">
             <Assign.To>
               <OutArgument x:TypeArguments="s:Int32[]">[Fillarr]</OutArgument>
             </Assign.To>
@@ -986,7 +950,7 @@
               <InArgument x:TypeArguments="s:Int32[]">[Fillarr.Concat({AAA}).ToArray]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_9">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[AAA]</OutArgument>
             </Assign.To>
@@ -1006,7 +970,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="輸入的值加入到Array" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1159,115" sap2010:WorkflowViewState.IdRef="MessageBox_20" Text="[string.Join(&quot;__&quot;,Fillarr)]">
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="輸入的值加入到Array" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="955,115" sap2010:WorkflowViewState.IdRef="MessageBox_20" Text="[string.Join(&quot;__&quot;,Fillarr)]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
