@@ -1,0 +1,142 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="771,1666" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Receiving Team on Google Sheets Sequence" sap:VirtualizedContainerService.HintSize="476,1601" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Receiving Team Test - Google 試算表" sap:VirtualizedContainerService.HintSize="434,1509" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="WindowMessages" ScopeGuid="9ba18c71-909d-48bc-b17d-367e151ae9a1" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1293" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'grouping'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target Element="{x:Null}" Id="0a221b43-40fe-4a45-8029-2afac4667fd8" InformativeScreenshot="473dcf7bde6f23f4f077f276e60862b7" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='1316541270-scrollable' tag='DIV' /&gt;">
+                  <ui:Target.ClippingRegion>
+                    <ui:Region Rectangle="127, 70, 338, 53" />
+                  </ui:Target.ClippingRegion>
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <uix:NClick ClickType="Single" DisplayName="Click 'msedge.exe Receiving'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9ba18c71-909d-48bc-b17d-367e151ae9a1" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://docs.google.com/spreadsheets/d/1uGggiZ6EY8U1Mx46q6L0MxrwVnmD_583y5ld1eCphBY/edit#gid=1609495979" DesignTimeRectangle="303, 264, 109, 21" FriendlyName="'msedge.exe Receiving'" Guid="6247b5eb-f4fe-4d6f-8cc5-4d83c5bd57c7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG0AAAAVCAYAAABMiWD6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKISURBVGhD7VjPK0RRFPZvjJFGysqPlLIiCysbKRFZKFO2Qkl2lNJYoSQpYiNlgRKKYmFhq2SMJM3fcfVNfbczx3vjx8zj3dzF17xzf5xz7vfdc97MVCUSCePhFrxoDsKL5iC8aA7Ci+YgKiZaKpU0TxcXpqV/OnD+L1FTU22uVseKcuPY/NG9SdbV2fGRjgbz8PBqahsb7Vjc8C9EA7Zm2k3/1rW1kW/2JGt2dndMfVdv6Lo44t+IhgqSVQUb4kAk5hxUkXFEpKKBkHw+X0Au92ZvdGdzyjzfPJt0us/Od0+tm7mBpiJb++acjAFfL3d3gXMSWJe7zNm2h1iIQfEwxuqTeUrfXEdxJzLLdl63VPjlvuHdvYpe6MhE0zdbth2SQZsHpFAglCSQIM5RcBCrK0MLIyHX4vk0s1TwIffgeWPztpBzkG8dV+coxZdc8DLSLhe/0h71oSQBQTZEJCGSVPrDBYCI9Ku/TISB+5Dr4+GjJZwCsvqC9iIndgvGlWvlpZT5wy7FzU8QmWggm60Dh90/mPuRaKxCDfoigRwvJSB8YR8/OU6xQLwkFjb9Zs7PPlRamGjwJ/OIlWi8uXjWxMtDaPs7omEurOVpkJywaoEvtL/J0daiNYg3uH1sjha3bZxSOTpdafJG6URxCM7hwPIdVooQ2NKXJkgKo8ng2jByMA9hFubHbSwAfg7XVuz7DGPMmb5wnq+2R51XrN5pTJ4tRCbFQ2Mc4uF2SxG/KhpsksA4soJlHD0XBJArfQNBInAt/bYND1khPhMNwBm4t2d2tkjEclGxd5pHOHDp5E+JcuFFiwCofv2bUFd3OfCiRQTZWuUfC5WAF81BeNEcRBVL2MMV5M07lfZjSblSom4AAAAASUVORK5CYII=" InformativeScreenshot="612032f3d11a371daa9ac65e0e522a8d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Receiving Team Test - Google 試算表' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(right)][u(hk)][d(hk)][d(shift)][k(down)][u(shift)][u(hk)][d(hk)][d(shift)][k(down)][u(shift)][u(hk)][d(hk)][d(ctrl)]c[u(ctrl)][u(hk)][d(hk)][d(ctrl)]x[u(ctrl)][u(hk)]" Version="V1" />
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][d(ctrl)][k(down)][u(ctrl)][u(hk)][d(hk)][d(ctrl)][k(down)][u(ctrl)][u(hk)][d(hk)][d(ctrl)][k(left)][u(ctrl)][u(hk)][d(hk)][d(ctrl)][k(up)][u(ctrl)][u(hk)][d(hk)][k(down)][u(hk)][d(hk)][k(down)][u(hk)][d(hk)][k(down)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][d(ctrl)][k(up)][u(ctrl)][u(hk)]" Version="V1" />
+            <uix:NClick ClickType="Double" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9ba18c71-909d-48bc-b17d-367e151ae9a1" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://docs.google.com/spreadsheets/d/1cwq9m3z7KkTNtzVfztxFGRAJ2XzKpfcalpT6TpFx-SU/edit#gid=1027134913" DesignTimeRectangle="856, 232, 110, 39" FriendlyName="'msedge.exe 未命名的試算表'" Guid="3fcd76ef-a60d-4757-8ca6-56968b99db2a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG4AAAAnCAYAAADuDH1fAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJdSURBVHhe7da7amJRFMZxX8Mm06SZcdKlUFA7g4IZQbwSDUYJYhFQU2hE8YKiCUjIxZhCE0FCarUUH8Cn+oa1iiEkh5mpZs46WcUfDmdvd+GPvfex7e7uQvtzwWAQT09THBwcGI7/6xTuL+t1u8jn84Zj/yOFE5rCCU3hhKZwQrMFgj+gycu2s/MF76NP36+O75qJIpO3RgonJIUTmsIJTeGEpnBCUzihfSq4YsyLUL5tOCYthROawglN4YSmcEJTOKEpnNAUTmifCs5KKZzQFE5oCic0hROawglN4YSmcEL7AEcvNHnZ7HY73vct3NNM2Fuj38IZjZkpj8eDw8NDhEIhuFwu5HI5+P1+HB0dIR6PY39/H4FAAG63G16vF9FoFLFY7NfvKJ/PZ7i2mbIcHP3x2+0WzWYTiUQC0+kU4/EYy+USk8kE7XYbl5eX2Gw26PV6/DwcDlEsFtFqtfDw8IBSqWS4tpmyHFwkEsHV1RUuLi4Yo1wu4/7+Ht1ulzEJajab8ThFkDQeDodxfn7O84+Pjw3XNlOWg8tkMnh9fcVgMECtVmMcgpzP50ilUvzu5uaGd1c2m+Uxgkqn0+j3+4xLx6bR2mbKcnCEQ3dZMplEo9HgO+zs7IyPQ4KiY5COyE6ng5eXF35P89brNUajEYM6HA7Dtc2U5eDoI4R20e3tLe+e6+trxqrX67zT7u7u4HQ6+eh8fHxkKAKrVqs8r1Kp8D1ptLaZshwc7TC6twqFAp6fnxmFdiCBLRYLxjw5OeG7jnba6ekpg9HHymq14ue9vT3Dtc3URw87fgIvCWol6bX2NgAAAABJRU5ErkJggg==" InformativeScreenshot="99627aa473657032749f59a81745f832.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='未命名的試算表 - Google 試算表' /&gt;" SearchSteps="Image" TargetType="ImageBased">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="820, 181, 25, 28" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='t-align' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='t-align' tag='DIV' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABkAAAAcCAYAAACUJBTQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABYSURBVEhL7dAxCgAgDARB/6I+WQQ/q9hZbGEkck2KKZOFS7nU+VtETCJigpHWxxP6teki3vQRmoTQ7Ukf8aKL0CQ36Nemi3jTR2gSQrcnfcRLREwiYlDnAl73YpHMIrAzAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(shift)][k(right)][u(shift)][u(hk)][d(hk)][d(shift)][k(right)][u(shift)][u(hk)][d(hk)][d(shift)][k(right)][u(shift)][u(hk)][d(hk)][d(shift)][k(right)][u(shift)][u(hk)][d(hk)][d(shift)][k(right)][u(shift)][u(hk)][d(hk)][d(shift)][k(right)][u(shift)][u(hk)][d(hk)][d(shift)][k(right)][u(shift)][u(hk)][d(hk)][d(alt)d(ctrl)][k(minus)][u(ctrl)u(alt)][u(hk)]" Version="V1" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="4, 2, 1595, 858" BrowserType="Edge" IconBase64="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" InformativeScreenshot="bcf4704737ca910e9a4babadba0bc561.png" Selector="&lt;html app='msedge.exe' title='Receiving Team Test - Google 試算表'/&gt;" Url="https://docs.google.com/spreadsheets/d/16HEBgdqIz9guw3l7CPy5wlADjYFb5yUecu-WHV9p4wU/edit#gid=1316541270" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
