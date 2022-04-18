@@ -1,0 +1,101 @@
+Sub createCheckList()
+
+
+
+
+
+lastrowCQP = Sheets("CQP Check").Cells(Sheets("CQP Check").Rows.count, "B").End(xlUp).Row
+
+lastrowChecking = Sheets("CheckList").Cells(Sheets("CQP Check").Rows.count, "B").End(xlUp).Row
+Debug.Print lastrowChecking
+For i = 6 To lastrowChecking
+    For k = 1 To 14
+        Sheets("CheckList").Cells.Item(i, k).Value = ""
+    Next
+Next
+
+lastrowCQP = Sheets("CQP Check").Cells(Sheets("CQP Check").Rows.count, "P").End(xlUp).Row
+Debug.Print lastrowChecking
+
+For i = 6 To lastrowChecking
+    For k = 15 To 28
+        Sheets("CheckList").Cells.Item(i, k).Value = ""
+    Next
+Next
+
+Sheets("CheckList").Cells.Item(3, 1).Value = ""
+Sheets("CheckList").Cells.Item(3, 3).Value = ""
+Sheets("CheckList").Cells.Item(3, 6).Value = ""
+Sheets("CheckList").Cells.Item(3, 11).Value = ""
+Sheets("CheckList").Cells.Item(3, 14).Value = ""
+
+Sheets("CheckList").Cells.Item(4, 3).Value = ""
+
+
+Sheets("CheckList").Cells.Item(3, 1).Value = Sheets("CQP Check").Cells.Item(lastrowCQP, 3).Value
+Sheets("CheckList").Cells.Item(3, 3).Value = Sheets("CQP Check").Cells.Item(lastrowCQP, 4).Value
+Sheets("CheckList").Cells.Item(3, 6).Value = Sheets("CQP Check").Cells.Item(lastrowCQP, 5).Value
+Sheets("CheckList").Cells.Item(3, 11).Value = Sheets("CQP Check").Cells.Item(lastrowCQP, 6).Value
+Sheets("CheckList").Cells.Item(3, 14).Value = Sheets("CQP Check").Cells.Item(lastrowCQP, 9).Value
+
+Sheets("CheckList").Cells.Item(4, 3).Value = Sheets("CQP Check").Cells.Item(lastrowCQP, 2).Value
+
+Dim j, count As Integer
+j = 6
+count = 1
+cellArray = Array(1, 2, 3, 4, 9, 11, 6, 5, 14)
+
+
+For i = 2 To lastrowCQP
+    
+    Sheets("CheckList").Cells.Item(j, cellArray(0)).Value = count
+    Sheets("CheckList").Cells.Item(j, cellArray(1)).Value = Sheets("CQP Check").Cells.Item(i, 7).Value ' material
+    Sheets("CheckList").Cells.Item(j, cellArray(2)).Value = Sheets("CQP Check").Cells.Item(i, 8).Value ' Qty
+    Sheets("CheckList").Cells.Item(j, cellArray(3)).Value = Sheets("CQP Check").Cells.Item(i, 9).Value ' Qty
+    Sheets("CheckList").Cells.Item(j, cellArray(4)).Value = Sheets("CQP Check").Cells.Item(i, 11).Value ' Qty
+    Sheets("CheckList").Cells.Item(j, cellArray(5)).Value = Sheets("CQP Check").Cells.Item(i, 10).Value ' Qty
+    
+    lastrowSerial = Sheets("SerialInput").Cells(Sheets("SerialInput").Rows.count, "A").End(xlUp).Row
+    If InStr(LCase(Sheets("CQP Check").Cells.Item(i, 10).Value), "sn") > 0 Then
+        
+        For k = 2 To lastrowSerial
+        
+            If Sheets("CQP Check").Cells.Item(i, 7).Value = Sheets("SerialInput").Cells.Item(k, 1).Value Then
+                j = j + 1
+                Sheets("CheckList").Cells.Item(j, cellArray(6)).Value = Sheets("SerialInput").Cells.Item(k, 5).Value
+                Range(Cells(j, cellArray(6)), Cells(j, cellArray(5))).Select
+                Selection.UnMerge
+                Range(Cells(j, cellArray(6)), Cells(j, cellArray(8))).Select
+                With Selection
+                    .HorizontalAlignment = xlRight
+                End With
+                Selection.Merge
+            End If
+            
+            
+        Next
+        
+    End If
+    
+    
+    
+    
+    count = count + 1
+    j = j + 1
+    If j > 50 Then
+        j = 6
+        cellArray = Array(15, 16, 17, 18, 23, 25, 20, 19, 28)
+    ElseIf j = 100 Then
+        Exit Sub
+    End If
+    
+    
+Next
+
+
+
+'Sheets("CheckList").Cells.Item(3, 14).Value = Sheets("CQP Check").Cells.Item(lastrowCQP, 1).Value
+
+
+
+End Sub

@@ -1,0 +1,24 @@
+Sub COO()
+'
+' COO Macro
+'
+
+'
+For r = 6 To 55
+
+
+    If Len(Cells.Item(r, 1)) > 0 Then
+    Cells.Item(r, 5) = Right(Cells.Item(r, 5), 2)
+    
+    ElseIf Len(Cells.Item(r, 15)) > 0 Then
+    Cells.Item(r, 19) = Right(Cells.Item(r, 19), 2)
+
+    End If
+
+
+
+
+Next
+    
+End Sub
+
