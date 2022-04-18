@@ -1,0 +1,160 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DataScraping" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_EXDT2" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>771,1674</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>DataScraping_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DataScraping" sap:VirtualizedContainerService.HintSize="672,1609" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="DT3" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="630,1517" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="1d50b03d-fcca-4126-81e5-6abcb6a96fc0" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="596,1301" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="EXDText" />
+              <Variable x:TypeArguments="sd:DataTable" Name="EXDT" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NExtractData sap2010:Annotation.AnnotationText="要選的兩個Selector:&#xA;&#xA;aaname='Item # Rev Designator Description WhseCode LPN VendorSerial # VendorLot # ReceiptReference # Date/Time In AvailQty Request DesignatorRank ExcludeFromAllocation' &#xA;&#xA;css-selector='body&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' &#xA;" AppendResults="False" ContinueOnError="True" DataTable="[out_EXDT2]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Item #' ReferenceIdx='0' Name='Item #'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Rev' ReferenceIdx='1' Name='Rev'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Designator' ReferenceIdx='2' Name='Designator'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Description' ReferenceIdx='3' Name='Description'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Whse&amp;#xA;Code' ReferenceIdx='4' Name='Whse Code'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='LPN' ReferenceIdx='5' Name='LPN'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Vendor&amp;#xA;Serial #' ReferenceIdx='6' Name='Vendor Serial #'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Vendor&amp;#xA;Lot #' ReferenceIdx='7' Name='Vendor Lot #'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Receipt&amp;#xA;Reference #' ReferenceIdx='8' Name='Receipt Reference #'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Date/Time In' ReferenceIdx='9' Name='Date/Time In'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Avail&amp;#xA;Qty' ReferenceIdx='10' Name='Avail Qty'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Request' ReferenceIdx='11' Name='Request'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Designator&amp;#xA;Rank' ReferenceIdx='12' Name='Designator Rank'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Exclude&amp;#xA;From&amp;#xA;Allocation' ReferenceIdx='13' Name='Exclude From Allocation'&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Item #' attr='text' /&gt;&lt;column name='Rev' attr='text' /&gt;&lt;column name='Designator' attr='text' /&gt;&lt;column name='Description' attr='text' /&gt;&lt;column name='Whse&amp;#xA;Code' attr='text' /&gt;&lt;column name='LPN' attr='text' /&gt;&lt;column name='Vendor&amp;#xA;Serial #' attr='text' /&gt;&lt;column name='Vendor&amp;#xA;Lot #' attr='text' /&gt;&lt;column name='Receipt&amp;#xA;Reference #' attr='text' /&gt;&lt;column name='Date/Time In' attr='text' /&gt;&lt;column name='Avail&amp;#xA;Qty' attr='text' /&gt;&lt;column name='Request' attr='text' /&gt;&lt;column name='Designator&amp;#xA;Rank' attr='text' /&gt;&lt;column name='Exclude&amp;#xA;From&amp;#xA;Allocation' attr='text' /&gt;&lt;/extract-table&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="554,363" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="Rows" MaximumResults="0" ScopeIdentifier="1d50b03d-fcca-4126-81e5-6abcb6a96fc0" Version="V1">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="23, 202, 1265, 1129" FriendlyName="'Item #RevDesignatorDesc…'" FullSelectorArgument="&lt;webctrl tag='TABLE' aaname='Item # Rev Designator Description WhseCode LPN VendorSerial # VendorLot # ReceiptReference # Date/Time In AvailQty Request DesignatorRank ExcludeFromAllocation' omit:colName='Item #' css-selector='body&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' omit:parentclass='COLLECTION' omit:parentname='orderForm' omit:rowName='Item #' omit:tableCol='1' omit:tableRow='1' /&gt;" Guid="05a63e31-9f0b-4ea2-a2aa-8dc7b95d2516" InformativeScreenshot="86b78076277a2233500dec0f6e9d3512.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='https://www.upspostsaleslogistics.com/oms/checkInventoryItemAvailability.do' /&gt;" SearchSteps="Selector" />
+              </uix:NExtractData.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NExtractData>
+            <ui:OutputDataTable DataTable="[out_EXDT2]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="554,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[EXDText]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="554,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[EXDText]" />
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="554,584" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,366" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,288" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="C:\Users\XTB3NYJ\Desktop\WTPE777.xlsx">
+                      <ui:ExcelApplicationScope.Body>
+                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                          </ActivityAction.Argument>
+                          <ui:ExcelWriteRange AddHeaders="True" DataTable="[out_EXDT2]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet2" StartingCell="A1" />
+                        </ActivityAction>
+                      </ui:ExcelApplicationScope.Body>
+                    </ui:ExcelApplicationScope>
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="512,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;DataTable was scraped in 'out_EXDT2'&quot;]" />
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPvSURBVFhHtZctcOJQEMeRlZWVV9e6xhV5uOKKK66D6qCYKgbLoBhUBpXBBUcddTlJHec4x0kksnJvf48sfaQBwrS3MzuQl327//3MeyUpQIvfc5mMY4kGXYnaTQlbNek/lqX/EKRclvCpKlGrLlHvWeJhKLPXabr7MOUCmL/NJB48y6RXl2RQk/mgLItRWdYvFZFfh/n9tSKrcUXmw7LMBlWnI+41Haj1ep1a+KAdALPXiQo3ZNIKZK2K5O2zgcLMXo+X6kDcrsp01Jfl32Vq0QPQ1TAW8XCHzVuNUNIry1SBx0+BRI/XEj58MM84NW0HGhUF0tK9KW0BhJrLoh6Tjv79pdSvzuS6VJJL5YuC3Lg5k/lI9aS0BUAx5RkzxsvO3aXUfpScUV8pAIrwFsBQdaZ0FAChq+sm32ie8iJ8EgDC3Lm7+LJRnwsBoI0opODs+wwbFwJAnvO8zq7Zc3bd56wM3Lg5zwcQPQYu3wjVtLqp8PL5ZhO/PLMepIqqFyWXItqMX5P1jSNDt8C1KwOwJwIAoF+rWuWkgZZ8/rmpga5GhWfWec86M8CGDMygad6eO3kYGdNjjPc4cRAAbWaFuAOAtRQAcmY01P+JDhirH94TLdPB8CFKDCD0EYmjEbDN+wBgFACWMhgDrMW6Rsj5/66TNZsaWvrbADB6DYBFhdGMx6ajq2BMBj5YhF8BYEZJAykgOsiwxhTF8AbAf4qAD4A6Yo4AwgrR1gH35SI8lAIMVbT9bB3PSQv73Vg/BuCUCPhFSLWzRjFmh5Dt55CytwZCADxdu6p1YdMNfOMxyGjOAzDT93hL1dseZgEMuG3I6RB95yKwtwb0TGceuTbCYIYtvA6A/07BwABlP+Nc3jZG7f27/jIDADcbVlOrPgA9TBIiG7WAIAKs8YvyRjrpXL5VIblNeoFj5O2TXdEoAtLtV+9Jj01Jp1fPmUZbAMnLxE02/xMM+7Pd2ArOrwHYZH357F7ATgbN1KoHAAIZRWQb85h3BsC6IE8uy8hR1KuxRmQcpRYzAOJh1x1EbHrtU3QqAGRI7VKNc0z3aQcAFLUbTnnz9iMVWWV0C0VGbo8BcMZ1KLlaGShoTbVPnwCsVysFUXdHdDzN+84DjqLspHPCN+jLbWTpey4p2rY5t6VPAIxCvYKxkdazgWTG7L895xmmXfGabon0HrD8s0g179JeABBXNKKxUCBWG/tOx7bG8CE1Lt8tTZPehPKuZEYHARi5u6Le7+gQej/WGqDXzShMOuh53k/0Cpa8RAcNGxUCYJRoDrk7LvRmY9990mPApr2aDrROIcNGJwEw4nIZaUSSod6cR9yAG26QnU4i/wAe0MW4I20LXQAAAABJRU5ErkJggg==" InformativeScreenshot="9323df43f5df50d153869623ed967a02.png" Selector="&lt;html app='msedge.exe' title='https://www.upspostsaleslogistics.com/oms/checkInventoryItemAvailability.do'/&gt;" Url="https://www.upspostsaleslogistics.com/oms/*" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
