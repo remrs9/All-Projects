@@ -1,0 +1,685 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="getfile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:SelectFiles;assembly=SelectFiles" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_marr" Type="OutArgument(s:String[])" />
+    <x:Property Name="out_LabelCount" Type="OutArgument(x:String)" />
+    <x:Property Name="out_arrall" Type="OutArgument(s:String[])" />
+    <x:Property Name="out_files" Type="OutArgument(s:String[])" />
+    <x:Property Name="out_QNarr" Type="OutArgument(s:String[])" />
+    <x:Property Name="out_Finans" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>836,5765</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>getfile_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="40">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>DocumentFormat.OpenXml.EMMA</x:String>
+      <x:String>DocumentFormat.OpenXml</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>ColorDetector</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>SelectFiles</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>DocumentFormat.OpenXml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>ColorDetector</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>SelectFiles</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="getfile" sap:VirtualizedContainerService.HintSize="846,5700" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Default="[{}]" Name="arrall" />
+      <Variable x:TypeArguments="s:String[]" Default="[{}]" Name="marr" />
+      <Variable x:TypeArguments="x:String" Name="LabelCount" />
+      <Variable x:TypeArguments="x:Int32" Name="FileCount" />
+      <Variable x:TypeArguments="s:String[]" Default="[{}]" Name="files" />
+      <Variable x:TypeArguments="s:String[]" Default="[{}]" Name="QNarr" />
+      <Variable x:TypeArguments="x:String" Name="QNF" />
+      <Variable x:TypeArguments="x:String" Name="EnvDesk" />
+      <Variable x:TypeArguments="x:String" Name="selectFolder" />
+      <Variable x:TypeArguments="x:String" Name="variable1" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="PPP" />
+      <Variable x:TypeArguments="s:String[]" Default="[{}]" Name="parr" />
+      <Variable x:TypeArguments="s:String[]" Default="[{}]" Name="Farr" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="DTGreen" />
+      <Variable x:TypeArguments="s:String[]" Name="Arr1" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="KKK" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[EnvDesk]" sap:VirtualizedContainerService.HintSize="804,61" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="Desktop" />
+    <Assign sap2010:Annotation.AnnotationText="Raw photos  are placed in &#xA;&quot;Desktop\NewPhotos\&quot;  Folder" sap:VirtualizedContainerService.HintSize="804,102" sap2010:WorkflowViewState.IdRef="Assign_28">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[selectFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[EnvDesk + "\NewPhotos\"]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <s1:SelectFiles sap2010:Annotation.AnnotationText="Select all green label photos manually&#xA;(hold ctrl &amp; click)" DisplayName="Select files" Files="[DTGreen]" sap:VirtualizedContainerService.HintSize="804,79" sap2010:WorkflowViewState.IdRef="SelectFiles_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </s1:SelectFiles>
+    <Assign sap2010:Annotation.AnnotationText="把選完的綠標照片名稱做成Array" sap:VirtualizedContainerService.HintSize="804,91" sap2010:WorkflowViewState.IdRef="Assign_32">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[Arr1]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[DTGreen.AsEnumerable().Select(Function (a) a.Field(Of String)("File").ToString).ToArray()]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Sequence DisplayName="For Each File in Folder" sap:VirtualizedContainerService.HintSize="804,3408" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="si:DirectoryInfo" Name="di" />
+        <Variable x:TypeArguments="s:String[]" Name="FFF" />
+        <Variable x:TypeArguments="x:Boolean" Name="Contain" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap2010:Annotation.AnnotationText="把資料夾裡面的所有檔案依名稱排序成Array(相機預設照片名稱有順序)" sap:VirtualizedContainerService.HintSize="762,102" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[files]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(selectFolder).ToArray]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For each file" sap:VirtualizedContainerService.HintSize="762,2602" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Arr1]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:String">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:String" Name="file" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,2478" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="ocr1" />
+                <Variable x:TypeArguments="ui:Image" Name="img1" />
+                <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="QN1" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LoadImage sap2010:Annotation.AnnotationText="以路徑載入圖片，並output成img1" DisplayName="Load Image" FileName="[file]" sap:VirtualizedContainerService.HintSize="480,115" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[img1]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LoadImage>
+              <TryCatch sap2010:Annotation.AnnotationText="OCR所有圖片&#xA;" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="480,329" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_2" Image="[img1]" Scale="3.8" Text="[ocr1]" />
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Assign sap:VirtualizedContainerService.HintSize="263,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[ocr1]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">nonono</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+                <TryCatch.Finally>
+                  <Sequence sap2010:Annotation.AnnotationText="關掉image不然後面會出錯" sap:VirtualizedContainerService.HintSize="287,431" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="245,134" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Dispose">
+                      <InvokeMethod.TargetObject>
+                        <InArgument x:TypeArguments="ui:Image">[img1]</InArgument>
+                      </InvokeMethod.TargetObject>
+                    </InvokeMethod>
+                    <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="245,134" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Collect" TargetType="s:GC" />
+                  </Sequence>
+                </TryCatch.Finally>
+              </TryCatch>
+              <Sequence sap2010:Annotation.AnnotationText="關掉讀取image的程式&#xA;不這樣做之後會卡住" sap:VirtualizedContainerService.HintSize="480,442" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="245,134" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="Dispose">
+                  <InvokeMethod.TargetObject>
+                    <InArgument x:TypeArguments="ui:Image">[img1]</InArgument>
+                  </InvokeMethod.TargetObject>
+                </InvokeMethod>
+                <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="245,134" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Collect" TargetType="s:GC" />
+              </Sequence>
+              <Sequence sap:VirtualizedContainerService.HintSize="480,1280" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Int32" Name="labelindex" />
+                  <Variable x:TypeArguments="x:Int32" Name="mindex" />
+                  <Variable x:TypeArguments="sd:Process" Name="imageopen" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap2010:Annotation.AnnotationText="打開綠標圖片來對比QN" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="Assign_33">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:Process">[imageopen]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:Process">[process.start(file)]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <Assign sap2010:Annotation.AnnotationText="取得綠標在資料夾Array中的index" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="Assign_34">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[labelindex]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[array.IndexOf(files,Arr1(KKK))]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <Assign sap2010:Annotation.AnnotationText="綠標的index-1&#xA;就是每個item最後一張照片的index" sap:VirtualizedContainerService.HintSize="438,102" sap2010:WorkflowViewState.IdRef="Assign_35">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[mindex]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[array.IndexOf(Files,Arr1(KKK))-1]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <Assign sap2010:Annotation.AnnotationText="把綠標的index放到一個array中&#xA;叫他綠標位置array" sap:VirtualizedContainerService.HintSize="438,102" sap2010:WorkflowViewState.IdRef="Assign_36">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:String[]">[arrall]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:String[]">[arrall.Append(labelindex.ToString).ToArray]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <Assign sap2010:Annotation.AnnotationText="把最後一張照片位置的index放到一個array中&#xA;最後一張照片位置array" sap:VirtualizedContainerService.HintSize="438,117" sap2010:WorkflowViewState.IdRef="Assign_37">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:String[]">[marr]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:String[]">[marr.Append(mindex.ToString).ToArray]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <ui:Matches sap2010:Annotation.AnnotationText="正則表達式 (\d{9})&#xA;取得九碼的數字&#xA;Assign成QN1" BuilderPattern="(\d{9})" sap:VirtualizedContainerService.HintSize="438,116" sap2010:WorkflowViewState.IdRef="Matches_5" Input="[ocr1]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Digit&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;9&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(\d{9})" RegexOption="IgnoreCase, Compiled" Result="[QN1]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:Matches>
+                <TryCatch sap2010:Annotation.AnnotationText="有抓到九碼的數字的話，Assign QNF為這個九碼數字&#xA;沒有抓到九碼數字的話，Assign QNF 為手動輸入的九碼數字" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,329" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch.Try>
+                    <Assign sap:VirtualizedContainerService.HintSize="263,60" sap2010:WorkflowViewState.IdRef="Assign_38">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[QNF]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[QN1(0).value]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,330" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="QNCode" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Please enter correct QN code (9 digits)" Title="Wrong QN format detected">
+                            <ui:InputDialog.Result>
+                              <OutArgument x:TypeArguments="x:String">[QNF]</OutArgument>
+                            </ui:InputDialog.Result>
+                          </ui:InputDialog>
+                        </Sequence>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                  <TryCatch.Finally>
+                    <Sequence sap:VirtualizedContainerService.HintSize="604,2527" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="ans" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" ChosenButton="[ans]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="562,84" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[QNF]" />
+                      <If Condition="[ans = &quot;No&quot;]" sap:VirtualizedContainerService.HintSize="562,2003" sap2010:WorkflowViewState.IdRef="If_5">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="526,1816" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="484,238" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Please enter correct QN code (9 digits)" Title="Wrong QN format detected">
+                              <ui:InputDialog.Result>
+                                <OutArgument x:TypeArguments="x:String">[QNF]</OutArgument>
+                              </ui:InputDialog.Result>
+                            </ui:InputDialog>
+                            <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" ChosenButton="[ans]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="484,84" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[QNF]" />
+                            <If Condition="[ans = &quot;No&quot;]" sap:VirtualizedContainerService.HintSize="484,641" sap2010:WorkflowViewState.IdRef="If_4">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="376,454" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Please enter correct QN code (9 digits)" Title="Wrong QN format detected">
+                                    <ui:InputDialog.Result>
+                                      <OutArgument x:TypeArguments="x:String">[QNF]</OutArgument>
+                                    </ui:InputDialog.Result>
+                                  </ui:InputDialog>
+                                  <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" ChosenButton="[ans]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[QNF]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <If Condition="[ans = &quot;No&quot;]" sap:VirtualizedContainerService.HintSize="484,641" sap2010:WorkflowViewState.IdRef="If_6">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="376,454" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="Please enter correct QN code (9 digits)" Title="Wrong QN format detected">
+                                    <ui:InputDialog.Result>
+                                      <OutArgument x:TypeArguments="x:String">[QNF]</OutArgument>
+                                    </ui:InputDialog.Result>
+                                  </ui:InputDialog>
+                                  <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" ChosenButton="[ans]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_18" Text="[QNF]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                      <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" sap2010:Annotation.AnnotationText="close word window" DisplayName="Close Window 'applicationframehost.ex...'" sap:VirtualizedContainerService.HintSize="562,137" sap2010:WorkflowViewState.IdRef="CloseWindow_2" InformativeScreenshot="98546eac3d0208381151a39922754368" Selector="&lt;wnd app='applicationframehost.exe' appid='Microsoft.Windows.Photos*' omit:title='Photos' /&gt;" WaitForReady="INTERACTIVE">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CloseWindow>
+                      <Assign sap2010:Annotation.AnnotationText="把取得的QN加到新的Array" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="Assign_39">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:String[]">[QNarr]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:String[]">[QNarr.Append(QNF).ToArray]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                    </Sequence>
+                  </TryCatch.Finally>
+                </TryCatch>
+              </Sequence>
+              <Assign sap:VirtualizedContainerService.HintSize="480,60" sap2010:WorkflowViewState.IdRef="Assign_40">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[KKK]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[KKK+1]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+      <Assign sap2010:Annotation.AnnotationText="總共幾個綠標" sap:VirtualizedContainerService.HintSize="762,91" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[LabelCount]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[arrall.Count.ToString]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Assign sap2010:Annotation.AnnotationText="總共照片數量 - 1 &#xA;就是最後一個item的最後一張照片index" DisplayName="all files count-1 - Assign" sap:VirtualizedContainerService.HintSize="762,102" sap2010:WorkflowViewState.IdRef="Assign_14">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[FileCount]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[(files.Count-1)]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Assign sap2010:Annotation.AnnotationText="把 -1 的array第一個去掉&#xA;因為第一個綠標的index是0&#xA;第一個mindex就是&quot;-1&quot;" sap:VirtualizedContainerService.HintSize="762,117" sap2010:WorkflowViewState.IdRef="Assign_15">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[marr]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[marr.skip(1).ToArray]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Assign sap2010:Annotation.AnnotationText="把最後一個item的最後一張照片index加入 marr" sap:VirtualizedContainerService.HintSize="762,102" sap2010:WorkflowViewState.IdRef="Assign_16">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[marr]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[marr.Append(FileCount.ToString).ToArray]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+    </Sequence>
+    <WriteLine DisplayName="lable count - Write Line" sap:VirtualizedContainerService.HintSize="804,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;Label Count: &quot; + arrall.Count.ToString]" />
+    <WriteLine sap2010:Annotation.AnnotationText="display all green label index" DisplayName="lable index display- Write Line" sap:VirtualizedContainerService.HintSize="804,92" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[string.Join(&quot;__&quot;, arrall)]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <WriteLine sap2010:Annotation.AnnotationText="display all last photo index for each item " DisplayName="minus1 index display - Write Line" sap:VirtualizedContainerService.HintSize="804,103" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[string.Join(&quot;__&quot;, marr)]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <Assign sap2010:Annotation.AnnotationText="set arguments" sap:VirtualizedContainerService.HintSize="804,91" sap2010:WorkflowViewState.IdRef="Assign_17">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[out_marr]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[marr]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="804,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_LabelCount]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[LabelCount]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="804,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[out_arrall]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[arrall]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="804,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[out_files]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[files]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InterruptibleDoWhile sap2010:Annotation.AnnotationText="算每一個word中有幾張照片&#xA;最後一張index - 綠標index  +1 = item 照片數量&#xA; " Condition="[PPP &lt; QNarr.Length]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="804,636" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="305,414" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap2010:Annotation.AnnotationText="算出來照片張數結果加到新的array" sap:VirtualizedContainerService.HintSize="263,91" sap2010:WorkflowViewState.IdRef="Assign_29">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[parr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[parr.Append((Integer.parse(marr(PPP)) - Integer.Parse(arrall(PPP)) +1 ).tostring).ToArray]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <Assign sap2010:Annotation.AnnotationText="display &quot;QNcode : 照片數量&quot; 的 array" sap:VirtualizedContainerService.HintSize="263,91" sap2010:WorkflowViewState.IdRef="Assign_30">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[Farr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Farr.Append(QNarr(PPP) +" : "+ Parr(PPP)).ToArray]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="263,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[PPP]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[PPP+1]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:InterruptibleDoWhile.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InterruptibleDoWhile>
+    <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" ChosenButton="[out_Finans]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="804,84" sap2010:WorkflowViewState.IdRef="MessageBox_14" Text="[&quot;Total Items count: &quot;+  arrall.Count.ToString + vbCrlf + &#xA;&quot;QN Codes &amp;  Pics count &quot;+vbCrlf +String.join(vbcrlf, Farr)]" />
+    <Assign sap:VirtualizedContainerService.HintSize="804,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[out_QNarr]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[QNarr]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>
